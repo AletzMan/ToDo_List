@@ -1,0 +1,82 @@
+.todoItem__item {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    height: 4rem; 
+    border-radius: 0.7rem 0 0 0; 
+    font-size: 0.9rem; 
+}
+.todoItem__item--true {
+    background-color: #e3f7e1;    
+    border: 1px solid #a1c2a9;     
+}
+.todoItem__item--true > .todoItem--check:active {    
+    animation: animationCheck 0.2s linear;     
+}
+.todoItem__item--false > .todoItem--check:active  {    
+    animation: animationCheck 0.2s linear;     
+}
+.todoItem__item--false {
+    background-color: #fde4e4;
+    border: 1px solid #fcc3c3; 
+}
+
+.todoItem--name {
+    margin-left: 2.7rem;
+    padding-top: 1.4rem;
+}
+
+.todoItem--delete {
+    position: absolute;
+    top: -0.75rem;
+    right: -0.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.todoItem--check {
+    position: absolute;
+    width: 1.5rem;
+    margin-left: 0.5rem;
+    margin-top: 1.2rem;    
+    cursor: pointer;
+}
+
+.todo__name--true {
+    text-decoration: line-through;
+    color: transparent;
+}
+.todo__name--true::after {
+    position: absolute;
+    left: 2.7rem;
+    content: attr(name);
+    color: #AAAAAA;
+    animation: animationNameCheck 0.6s linear both;
+}
+
+.todoItem__date {
+    position: absolute;
+    right: 0rem;
+    bottom: 0rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+}
+.todoItem__date span{
+    font-size: 0.75rem;
+    font-weight: 100;
+}
+
+@keyframes animationCheck {
+    0%{transform: scale(0.8);}
+    50%{transform: scale(1.1);}
+    100%{transform: scale(1);}
+}
+@keyframes animationNameCheck {
+    0%{opacity: (1);
+        text-decoration: none;}
+    100%{
+        opacity: (1);
+        text-decoration: line-through;
+    }
+}

@@ -1,0 +1,51 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 912px;
+  min-width: 375px;
+  height: 8rem;
+  background-color: #121212;
+  border-bottom: 2px solid #b3da08;
+  overflow-Y: hidden;
+  z-index: 1;
+}
+.header__title {
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0.5rem 0 2.5rem 0;
+  font-size: 2rem;
+}
+.header__tasks {
+  position: relative;
+  color: #FFFFFF;
+  background-color: #333333;
+  border: 1px solid #d1cdcd;
+  padding: 0.3rem 1rem;
+  margin: 0 2rem;
+  height: 1.7rem;
+  text-align: center;
+}
+.header__tasks--task {
+  position: absolute;
+  width: 300px;
+  top: -1.8rem;
+  left: calc(50% - 150px);
+  font-size: 1.2rem;
+  font-weight: 100;
+  padding: 0rem;
+  color: #ffffff;
+}
+.header__tasks--counter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: all 0.5s linear;
+  opacity: 0.6;
+}
+.header__tasks--porcentage {
+  position: relative;
+  font-size: 1.2rem;
+  bottom: 0.3rem;
+}

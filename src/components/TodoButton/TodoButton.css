@@ -1,0 +1,21 @@
+.todoButton__button {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    right: 1rem;
+    border-radius: 0rem;
+    border: none;
+    background-color: #d0ee49;
+    font-size: 2.8rem;
+    text-align: center;
+    cursor: pointer;
+    color: #0f0f0f;
+    transition: all 0.2s linear;
+}
+.todoButton__button:hover {        
+    color: #080808;
+    background-color: #8ea32e;
+}
+
+
+
