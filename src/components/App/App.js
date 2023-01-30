@@ -5,17 +5,13 @@ import { AppProvider } from '../TaskContext';
 
 
 
-
-function App() {
-    
-
-
+function App() { 
     return (
         <AppProvider>
             <AppUI />
-        </AppProvider>    
-     
+        </AppProvider>         
     );
 }
+
 
 export default App;
