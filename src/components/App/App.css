@@ -2,9 +2,11 @@
   text-align: center;
 }
 .loading {
-  color: rgb(28, 36, 102);
+  position: absolute;
+  top: 8.3rem;
+  color: #d2fffb;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 100;
 }
 .loading::after {
   content: '';

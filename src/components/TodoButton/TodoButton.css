@@ -5,16 +5,16 @@
     right: 1rem;
     border-radius: 0rem;
     border: none;
-    background-color: #d0ee49;
+    background-color: #07b3a4;
     font-size: 2.8rem;
     text-align: center;
     cursor: pointer;
-    color: #0f0f0f;
+    color: #e2e2e2;
     transition: all 0.2s linear;
 }
 .todoButton__button:hover {        
-    color: #080808;
-    background-color: #8ea32e;
+    color: #bdbdbd;
+    background-color: #10534e;
 }
 
 

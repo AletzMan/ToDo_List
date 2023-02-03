@@ -8,7 +8,8 @@
 }
 .todoItem__item--true {
     background-color: #e3f7e1;    
-    border: 1px solid #a1c2a9;     
+    border: 1px solid #00ff44;
+    box-shadow: 0px 0px 0.5rem #383838, 0px 0px 0.2rem #16631e inset;
 }
 .todoItem__item--true > .todoItem--check:active {    
     animation: animationCheck 0.2s linear;     
@@ -18,7 +19,8 @@
 }
 .todoItem__item--false {
     background-color: #fde4e4;
-    border: 1px solid #fcc3c3; 
+    border: 1px solid #ee2020; 
+    box-shadow: 0px 0px 0.5rem #383838, 0px 0px 0.2rem #631616 inset;
 }
 
 .todoItem--name {
@@ -28,9 +30,9 @@
 
 .todoItem--delete {
     position: absolute;
-    top: -0.75rem;
-    right: -0.5rem;
-    width: 1.5rem;
+    top: -0.65rem;
+    right: -0.65rem;
+    width: 1.3rem;
     cursor: pointer;
 }
 

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 function useLocalStorage(itemName, initValue) {
-    const [loading, setLoading] = React.useState(true);
-    const [error, setError] = React.useState(false);
-    const [item, setItem] = React.useState(initValue);
+    const [synchronizedItem, setSynchronizedItem] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const [item, setItem] = useState(initValue);
     React.useEffect(() => {
 
         setTimeout(() => {
@@ -19,11 +20,18 @@ function useLocalStorage(itemName, initValue) {
                 }
                 setItem(parsedItem);
                 setLoading(false);
+                setSynchronizedItem(true);
             } catch(error) {
                 setError(error);
             }
-        }, 3500);
-    })
+        }, 1500);
+    }, [synchronizedItem])
+
+
+    const synchronizeItem = () => {
+        setLoading(true);
+        setSynchronizedItem(false);
+    }
 
     const saveItem = (newItem) => {
         try {
@@ -38,7 +46,8 @@ function useLocalStorage(itemName, initValue) {
         item,
         saveItem,
         loading,
-        error
+        error,
+        synchronizeItem
     };
 
 }

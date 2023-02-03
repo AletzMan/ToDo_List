@@ -1,11 +1,11 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
-const AppContext = React.createContext();
 
-function AppProvider(props) {
-    const { item: tasks, saveItem: saveTasks, loading, error } = useLocalStorage('TASKS_V1', []);
+function useTodos() {
+    const { item: tasks, saveItem: saveTasks, loading, error, synchronizeItem: synchronizeTasks } = useLocalStorage('TASKS_V1', []);
     const [stateSearch, setStateSearch] = React.useState('');
     const [stateModal, setStateModal] = React.useState(false);
+    const [typeModal, setTypeModal] = React.useState(0);
     const [stateMessageModal, setStateMessageModal] = React.useState('');
     const [stateDateModal, setStateDateModal] = React.useState("");
     const completedTasks = tasks.filter(task => task.completed).length;
@@ -15,7 +15,7 @@ function AppProvider(props) {
     if (stateSearch.length === 0) {
         taskSearch = tasks;
         if (taskSearch.length === 0) {
-            let taskEmpty = [{ id: 0, text: 'No tienes tareas agregadas', completed: undefined, date: ''}];
+            let taskEmpty = [{ id: 0, text: 'No tienes tareas agregadas', completed: undefined, date: '' }];
             taskSearch = taskEmpty;
         }
     } else {
@@ -51,29 +51,28 @@ function AppProvider(props) {
         })
         saveTasks(newtasks);
     };
-    return (
-        <AppContext.Provider value={{
-            loading,
-            error,
-            totalTasks,
-            completedTasks,
-            stateSearch,
-            setStateSearch,
-            taskSearch,
-            taskComplete,
-            taskDelete,
-            stateModal,
-            onLoadModal,
-            setStateMessageModal,
-            stateMessageModal,
-            setStateDateModal,
-            stateDateModal,
-            addTask,
-        }}>
-            {props.children}
-        </AppContext.Provider>
-    );
+    return ({
+        loading,
+        error,
+        totalTasks,
+        completedTasks,
+        stateSearch,
+        setStateSearch,
+        taskSearch,
+        taskComplete,
+        taskDelete,
+        stateModal,
+        onLoadModal,
+        setStateMessageModal,
+        stateMessageModal,
+        setStateDateModal,
+        stateDateModal,
+        addTask,
+        synchronizeTasks,
+        typeModal, 
+        setTypeModal
+    });
 }
 
-export {AppContext, AppProvider};
+export { useTodos };
 //<AppContext.Consumer></AppContext.Consumer>

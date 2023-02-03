@@ -1,0 +1,19 @@
+.footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0rem;
+    width: 100%;
+    max-width: 912px;
+    min-width: 375px; 
+    height: 4rem;
+    background-color: #042926;
+    border-top: 2px solid #07b3a4; &__false {
+        opacity: 1;
+    }
+    &__true {
+        opacity: 0.5;
+    }
+}
+   

@@ -1,6 +1,6 @@
 import React from "react";
-import { AppContext } from "../TaskContext";
 import './TodoCounter.css';
+import listIcon from '../../assets/list.svg'
 /*
 const estilos = {
     color: '#AABB33',
@@ -12,8 +12,7 @@ const estilos = {
 */
 
  
-function TodoCounter() {    
-    const { totalTasks, completedTasks } = React.useContext(AppContext);
+function TodoCounter({totalTasks, completedTasks, loading }) {    
 
     let porcentageTasksCompleted = (100 / totalTasks) * completedTasks;
     if(totalTasks === 0) {
@@ -33,8 +32,9 @@ function TodoCounter() {
         colorNum = 4;
     }
     return (
-        <header className="header">
-            <h2 className="header__title">Lista de Pendientes</h2>
+        <header className={`header header__${loading}`}>
+            <img className="header__image" src={listIcon}/>
+            <h2 className="header__title">LISTA DE TAREAS</h2>
             <div className="header__tasks">
                 <div className="header__tasks--counter" style={{width: `${porcentageTasksCompleted}%`, backgroundColor: colorTaskPorcentageTask[colorNum]} }></div>
                 <span className="header__tasks--task">{completedTasks} de {totalTasks} tareas completadas</span>

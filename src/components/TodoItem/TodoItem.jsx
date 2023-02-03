@@ -1,6 +1,6 @@
 import React from "react";
 import "./TodoItem.css";
-import deleteTaskIcon from "../../assets/delete.svg";
+import deleteTaskIcon from "../../assets/delete.png";
 import check from "../../assets/check.svg";
 import nocheck from "../../assets/no-check.svg";
 import information from "../../assets/information.svg";

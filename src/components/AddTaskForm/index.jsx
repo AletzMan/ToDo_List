@@ -1,10 +1,8 @@
 import React from "react";
-import { AppContext } from "../TaskContext";
 import addTaskImage  from "../../assets/task_add.svg"
 
 
-function AddTaskForm() {
-    const { stateModal, onLoadModal, stateMessageModal, setStateMessageModal, stateDateModal, setStateDateModal, addTask } = React.useContext(AppContext);
+function AddTaskForm({ stateModal, onLoadModal, stateMessageModal, setStateMessageModal, stateDateModal, setStateDateModal, addTask }) {
     let messageError = "No puede quedar el campo vacio";
     const [stateError, setStateError] = React.useState('');
     const searchInput = (event) => {
@@ -32,7 +30,6 @@ function AddTaskForm() {
         }
     }
     const inputDate = (e) => {
-        console.log(e.target.value);
         setStateDateModal(e.target.value);
     }
     let today = new Date();

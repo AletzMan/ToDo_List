@@ -5,22 +5,35 @@
     max-width: 912px;
     min-width: 375px;
     height: 8rem;
-    background-color: #121212;
-    border-bottom: 2px solid #b3da08;
+    background-color: #042926;
+    border-bottom: 2px solid #07b3a4;
     overflow-Y: hidden;
     z-index: 1;
-
+    &__false {
+        opacity: 1;
+    }
+    &__true {
+        opacity: 0.5;
+    }
+    &__image {
+        position: absolute;
+        width: 4.5rem;
+        left: 0.5rem;
+        top: 0.5rem;
+    }
     &__title {
         color: #FFFFFF;
         text-align: center;
         margin: 0.5rem 0 2.5rem 0;
-        font-size: 2rem;
+        font-size: 1.2rem;
+        background-color: #07b3a422;
+        padding: 0.3rem 0;
     }
 
     &__tasks {
         position: relative;
         color: #FFFFFF;
-        background-color: #333333;
+        background-color: #1c493f;
         border: 1px solid #d1cdcd;
         padding: 0.3rem 1rem;
         margin: 0 2rem;
@@ -30,9 +43,9 @@
         &--task {
             position: absolute;
             width: 300px;
-            top: -1.8rem;
+            top: -1.4rem;
             left: calc(50% - 150px);
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 100;
             padding: 0rem;
             color: #ffffff;

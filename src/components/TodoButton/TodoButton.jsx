@@ -1,12 +1,16 @@
 import React from "react";
 import "./TodoButton.css"
 
-function TodoButton({ onLoadModal}) {
+function TodoButton({ onLoadModal, loading, setTypeModal }) {
 
-  
+
     return (
         <button className="todoButton__button"
-            onClick={() => onLoadModal(true)/*addTask('Aqui se abrira un modal')*/}
+            onClick={() => {
+                onLoadModal(true)
+                setTypeModal(1)
+            }/*addTask('Aqui se abrira un modal')*/}
+            disabled={loading}
         >+</button>
     );
 }

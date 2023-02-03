@@ -1,17 +1,15 @@
 import React from "react";
 import "./TodoFooter.css";
-import {TodoSearch} from "../TodoSearch/TodoSearch";
-import {TodoButton} from "../TodoButton/TodoButton";
-import { AppContext } from "../TaskContext";
 
-function TodoFooter() {
-    const { onLoadModal } = React.useContext(AppContext);
+function TodoFooter({ children, loading }) {
     return (
-        <footer className="todoFooter">        
-            <TodoSearch />
-            <TodoButton onLoadModal={() => onLoadModal()} />
+        <footer className={`footer`}>
+            {React.Children
+                .toArray(children)
+                .map(child => React.cloneElement(child, { loading }))
+            }
         </footer>
     );
 }
 
-export {TodoFooter};
+export { TodoFooter };
