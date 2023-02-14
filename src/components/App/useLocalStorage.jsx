@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 
 function useLocalStorage(itemName, initValue) {
+
     const [synchronizedItem, setSynchronizedItem] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -21,7 +22,7 @@ function useLocalStorage(itemName, initValue) {
                 setItem(parsedItem);
                 setLoading(false);
                 setSynchronizedItem(true);
-            } catch(error) {
+            } catch (error) {
                 setError(error);
             }
         }, 1500);
@@ -51,5 +52,7 @@ function useLocalStorage(itemName, initValue) {
     };
 
 }
+
+
 
 export { useLocalStorage };
