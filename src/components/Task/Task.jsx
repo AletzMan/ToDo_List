@@ -1,12 +1,12 @@
 import React from "react";
-import "./TodoItem.css";
+import "./Task.css";
 import deleteTaskIcon from "../../assets/delete.png";
 import check from "../../assets/check.svg";
 import nocheck from "../../assets/no-check.svg";
 import information from "../../assets/information.svg";
 import noneTask from "../../assets/nonetask.svg";
 
-function TodoItem({ text, completed, date, taskComplete, taskDelete }) {
+function Task({ text, completed, date, taskComplete, taskDelete }) {
     let imageDelete;
     let imageTask = noneTask;
     let tagDate = <p className="todoItem__date">Fecha limite: <span>{date}</span></p>;
@@ -34,4 +34,4 @@ function TodoItem({ text, completed, date, taskComplete, taskDelete }) {
         </li>
     );
 }
-export { TodoItem };
+export { Task };

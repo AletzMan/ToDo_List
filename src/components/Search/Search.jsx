@@ -1,8 +1,8 @@
 import React from "react";
-import "./TodoSearch.css";
+import "./Search.css";
 import searchIcon from "../../assets/search.svg";
 
-function TodoSearch({ stateSearch, setStateSearch, loading }) {
+function Search({ stateSearch, setStateSearch, loading }) {
     const searchInput = (event) => {
         setStateSearch(event.target.value);
     }
@@ -20,4 +20,4 @@ function TodoSearch({ stateSearch, setStateSearch, loading }) {
 }
 
 
-export { TodoSearch };
+export { Search };

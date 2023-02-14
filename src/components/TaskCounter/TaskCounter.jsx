@@ -1,5 +1,5 @@
 import React from "react";
-import './TodoCounter.css';
+import './TaskCounter.css';
 import listIcon from '../../assets/list.svg'
 /*
 const estilos = {
@@ -12,7 +12,7 @@ const estilos = {
 */
 
  
-function TodoCounter({totalTasks, completedTasks, loading }) {    
+function TaskCounter({totalTasks, completedTasks, loading }) {    
 
     let porcentageTasksCompleted = (100 / totalTasks) * completedTasks;
     if(totalTasks === 0) {
@@ -45,4 +45,4 @@ function TodoCounter({totalTasks, completedTasks, loading }) {
 }
 
 
-export { TodoCounter };
+export { TaskCounter };

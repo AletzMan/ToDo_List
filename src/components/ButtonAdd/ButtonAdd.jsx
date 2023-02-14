@@ -1,7 +1,7 @@
 import React from "react";
-import "./TodoButton.css"
+import "./ButtonAdd.css"
 
-function TodoButton({ onLoadModal, loading, setTypeModal }) {
+function ButtonAdd({ onLoadModal, loading, setTypeModal }) {
 
 
     return (
@@ -15,4 +15,4 @@ function TodoButton({ onLoadModal, loading, setTypeModal }) {
     );
 }
 
-export { TodoButton }; 
+export { ButtonAdd }; 

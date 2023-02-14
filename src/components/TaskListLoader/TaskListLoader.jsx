@@ -1,7 +1,7 @@
 import React from "react";
 import ContentLoader from 'react-content-loader';
 
-const TaskList = props => {
+const TaskListLoader = props => {
     return (
       <ContentLoader
         speed={2}
@@ -20,11 +20,11 @@ const TaskList = props => {
     )
   }
   
-  TaskList.metadata = {
+  TaskListLoader.metadata = {
     name: 'Abraham Calsin',
     github: 'abrahamcalsin',
     description: 'Loading a list of tasks.',
     filename: 'TaskList',
   }
   
-  export { TaskList}
+  export { TaskListLoader }

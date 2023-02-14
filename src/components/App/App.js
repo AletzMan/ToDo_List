@@ -1,14 +1,14 @@
 import React from 'react';
-import { TodoCounter } from '../TodoCounter/TodoCounter';
-import { TodoList } from '../TodoList/TodoList';
-import { TodoItem } from '../TodoItem/TodoItem';
-import { TodoFooter } from '../TodoFooter/TodoFooter';
-import { TodoSearch } from "../TodoSearch/TodoSearch";
-import { TodoButton } from "../TodoButton/TodoButton";
+import { TaskCounter } from '../TaskCounter/TaskCounter';
+import { TaskList } from '../TaskList/TaskList';
+import { Task } from '../Task/Task';
+import { Footer } from '../Footer/Footer';
+import { Search } from "../Search/Search";
+import { ButtonAdd } from "../ButtonAdd/ButtonAdd";
 import { Modal } from '../Modal';
 import './App.css';
 import { AddTaskForm } from "../AddTaskForm";
-import { TaskList } from "../TaskListLoader/TaskListLoader";
+import { TaskListLoader } from "../TaskListLoader/TaskListLoader";
 import { useTodos } from './useTodos';
 import { ChangeAlert } from '../ChangeAlert/ChangeAlert';
 
@@ -36,17 +36,17 @@ function App() {
         setTypeModal } = useTodos();
     return (
         <React.Fragment>
-            <TodoCounter
+            <TaskCounter
                 totalTasks={totalTasks}
                 completedTasks={completedTasks}
                 loading={loading}
             />
-            <TodoList>
+            <TaskList>
                 {error && <p>Llamar a asitencia 333-142-2547</p>}
-                {loading && <><TaskList style={{ width: window.outerWidth - 64, height: 1150, viewBox: `0 0 ${window.outerWidth - 64} ${1150}` }}></TaskList> <p className="loading">Cargando, por favor espere</p></>}
+                {loading && <><TaskListLoader style={{ width: window.outerWidth - 64, height: 1150, viewBox: `0 0 ${window.outerWidth - 64} ${1150}` }}></TaskListLoader> <p className="loading">Cargando, por favor espere</p></>}
                 {!loading && !taskSearch.lenght}
                 {!loading && taskSearch.map(({ id, text, completed, date }) => (
-                    <TodoItem
+                    <Task
                         key={id}
                         text={text}
                         completed={completed}
@@ -54,17 +54,17 @@ function App() {
                         taskComplete={() => taskComplete(id)}
                         taskDelete={() => taskDelete(id)} />
                 ))}
-            </TodoList>
-            <TodoFooter loading={loading}>
-                {<TodoSearch
+            </TaskList>
+            <Footer loading={loading}>
+                {<Search
                     stateSearch={stateSearch}
                     setStateSearch={setStateSearch}
                 />}
-                <TodoButton
+                <ButtonAdd
                     onLoadModal={() => onLoadModal()}
                     setTypeModal={setTypeModal}
                 />
-            </TodoFooter>
+            </Footer>
 
 
             <Modal>

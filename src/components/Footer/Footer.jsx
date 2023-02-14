@@ -1,7 +1,7 @@
 import React from "react";
-import "./TodoFooter.css";
+import "./Footer.css";
 
-function TodoFooter({ children, loading }) {
+function Footer({ children, loading }) {
     return (
         <footer className={`footer`}>
             {React.Children
@@ -12,4 +12,4 @@ function TodoFooter({ children, loading }) {
     );
 }
 
-export { TodoFooter };
+export { Footer };
