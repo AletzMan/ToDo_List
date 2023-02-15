@@ -35,6 +35,13 @@
     width: 1.3rem;
     cursor: pointer;
 }
+.todoItem--edit {
+    position: absolute;
+    top: -0.65rem;
+    right: 1rem;
+    width: 1.3rem;
+    cursor: pointer;
+}
 
 .todoItem--check {
     position: absolute;

@@ -1,19 +1,19 @@
 import React from 'react';
-import { TaskCounter } from '../TaskCounter/TaskCounter';
-import { TaskList } from '../TaskList/TaskList';
-import { Task } from '../Task/Task';
-import { Footer } from '../Footer/Footer';
-import { Search } from "../Search/Search";
-import { ButtonAdd } from "../ButtonAdd/ButtonAdd";
-import { Modal } from '../Modal';
-import './App.css';
-import { AddTaskForm } from "../AddTaskForm";
-import { TaskListLoader } from "../TaskListLoader/TaskListLoader";
-import { useTodos } from './useTodos';
-import { ChangeAlert } from '../ChangeAlert/ChangeAlert';
+import { TaskCounter } from '../../UI/TaskCounter/TaskCounter';
+import { TaskList } from '../../UI/TaskList/TaskList';
+import { Task } from '../../UI/Task/Task';
+import { Footer } from '../../UI/Footer/Footer';
+import { Search } from "../../UI/Search/Search";
+import { ButtonAdd } from "../../UI/ButtonAdd/ButtonAdd";
+import { Modal } from '../../UI/Modal';
+import '../../components/App/App.css';
+import { AddTaskForm } from "../../components/AddTaskForm";
+import { TaskListLoader } from "../../UI/TaskListLoader/TaskListLoader";
+import { useTodos } from '../../components/App/useTodos';
+import { ChangeAlert } from '../../UI/ChangeAlert/ChangeAlert';
 
 
-function App() {
+function HomePage() {
     const {
         error,
         loading,
@@ -31,6 +31,7 @@ function App() {
         stateDateModal,
         setStateDateModal,
         addTask,
+        saveTask,
         synchronizeTasks,
         typeModal,
         setTypeModal } = useTodos();
@@ -48,11 +49,13 @@ function App() {
                 {!loading && taskSearch.map(({ id, text, completed, date }) => (
                     <Task
                         key={id}
+                        id={id}
                         text={text}
                         completed={completed}
                         date={date}
                         taskComplete={() => taskComplete(id)}
-                        taskDelete={() => taskDelete(id)} />
+                        taskDelete={() => taskDelete(id)}
+                        saveTask={saveTask} />
                 ))}
             </TaskList>
             <Footer loading={loading}>
@@ -76,6 +79,7 @@ function App() {
                     stateDateModal={stateDateModal}
                     setStateDateModal={setStateDateModal}
                     addTask={addTask}
+                    saveTask={saveTask}
                 ></AddTaskForm>}
             </Modal >
 
@@ -85,4 +89,4 @@ function App() {
 }
 
 
-export default App;
+export { HomePage };

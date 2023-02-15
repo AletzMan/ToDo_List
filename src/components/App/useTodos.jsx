@@ -38,6 +38,11 @@ function useTodos() {
         newArratTasks.push(newTask);
         saveTasks(newArratTasks);
     };
+
+    const saveTask = (message, date) => {
+        console.log(message, date)
+    }
+
     const taskComplete = (id) => {
         const newTasks = [...tasks];
         newTasks[id].completed = !newTasks[id].completed;
@@ -51,6 +56,7 @@ function useTodos() {
         })
         saveTasks(newtasks);
     };
+
     return ({
         loading,
         error,
@@ -68,6 +74,7 @@ function useTodos() {
         setStateDateModal,
         stateDateModal,
         addTask,
+        saveTask,
         synchronizeTasks,
         typeModal, 
         setTypeModal
