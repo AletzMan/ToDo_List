@@ -1,0 +1,47 @@
+$color__header: #202731;
+$color__section: #4D4F56;
+$color__title: #c9c9c9;
+$color__button: #00ACB4;
+$color__border: #787C85;
+
+.todoButton__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    right: 1rem;
+    border-radius: 0rem;
+    border: none;
+    padding: 0 0 0 0.1rem;
+    font-size: 2.6rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    background-color: $color__header;
+    transition: all 0.3s linear;
+    color: $color__title;
+    border: 1px solid $color__border;
+    cursor: pointer;
+
+    &--img{
+        width: 17px; 
+        
+        & path{
+            fill: $color__title;
+            transition: all 0.3s linear;       
+        }
+    }
+
+    
+
+    &:hover {
+        border: 1px solid rgba($color: $color__button, $alpha: 0.6);
+        color: $color__button;
+        box-shadow: 0 0 19px 1px rgba($color: $color__button, $alpha: 0.4);
+        &> .todoButton__button--img path {
+            fill: $color__button;
+        }
+   }
+}
+

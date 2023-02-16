@@ -25,7 +25,7 @@
   grid-column: 1/span 3;
 }
 .modal__button {
-  width: 7rem;
+  min-width: 5rem;
   height: 2rem;
   align-self: flex-end;
   border-radius: 0.3rem;
@@ -33,7 +33,7 @@
   background-color: #202731;
   transition: all 0.3s linear;
   color: #c9c9c9;
-  border: 1px solid #4D4F56;
+  border: 1px solid #787C85;
   cursor: pointer;
 }
 .modal__button:hover {

@@ -51,7 +51,7 @@ function AddTaskForm({ stateModal, onLoadModal, stateMessageModal, setStateMessa
                     onInput={searchInput}>
                 </textarea>
                 <label className="modal__window--labeldate" from="dateTaskEnd">Fecha Limite</label>
-                <input name="dateTaskEnd" className="modal__window--date" type="date" min={dateToday} onChange={inputDate} value={stateDateModal}></input>
+                <input name="dateTaskEnd" className="modal__window--date" type="date"  onChange={inputDate} value={stateDateModal}></input>
                 <label className={`modal__window--error ${stateError}`}>{messageError}</label>
                 <button type="button" className="modal__window--buttonClose"
                     onMouseDown={() => closeModal()}

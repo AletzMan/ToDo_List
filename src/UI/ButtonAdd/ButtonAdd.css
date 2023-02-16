@@ -1,21 +1,35 @@
 .todoButton__button {
-    position: relative;
-    width: 3rem;
-    height: 3rem;
-    right: 1rem;
-    border-radius: 0rem;
-    border: none;
-    background-color: #07b3a4;
-    font-size: 2.8rem;
-    text-align: center;
-    cursor: pointer;
-    color: #e2e2e2;
-    transition: all 0.2s linear;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  right: 1rem;
+  border-radius: 0rem;
+  border: none;
+  padding: 0 0 0 0.1rem;
+  font-size: 2.6rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  background-color: #202731;
+  transition: all 0.3s linear;
+  color: #c9c9c9;
+  border: 1px solid #787C85;
+  cursor: pointer;
 }
-.todoButton__button:hover {        
-    color: #bdbdbd;
-    background-color: #10534e;
+.todoButton__button--img {
+  width: 17px;
 }
-
-
-
+.todoButton__button--img path {
+  fill: #c9c9c9;
+  transition: all 0.3s linear;
+}
+.todoButton__button:hover {
+  border: 1px solid rgba(0, 172, 180, 0.6);
+  color: #00ACB4;
+  box-shadow: 0 0 19px 1px rgba(0, 172, 180, 0.4);
+}
+.todoButton__button:hover > .todoButton__button--img path {
+  fill: #00ACB4;
+}

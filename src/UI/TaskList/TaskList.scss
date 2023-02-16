@@ -1,0 +1,29 @@
+$color__header: #202731;
+$color__section: #4D4F56;
+$color__title: #c9c9c9;
+$color__button: #00ACB4;
+$color__border: #787C85;
+
+.todoList {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(4rem, 1fr));
+    justify-content: center;
+    align-items: center;
+    width: 100%;    
+    height: calc(100vh - 12rem);
+    margin-top: 8rem;
+    overflow-y: scroll;
+    gap: 1rem;
+    padding: 2rem;
+    list-style: none;
+    background-color: $color__border; 
+}
+section {
+    width: 100%;   
+    height: calc(100vh - 12rem); 
+    max-width: 912px;
+    min-width: 375px; 
+    border-left: 1px solid #17171766;
+    border-right: 1px solid #17171766;
+}

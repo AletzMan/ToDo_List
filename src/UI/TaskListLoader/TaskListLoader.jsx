@@ -8,8 +8,8 @@ const TaskListLoader = props => {
         width={props.width}
         height={props.height}
         viewBox={props.viewBox}
-        backgroundColor="#17413d"
-        foregroundColor="#07b3a4"
+        backgroundColor="#4D4F5655"
+        foregroundColor="#c9c9c955"
         {...props}
       >
         

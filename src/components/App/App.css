@@ -1,10 +1,11 @@
+
 .App {
   text-align: center;
 }
 .loading {
   position: absolute;
   top: 8.3rem;
-  color: #d2fffb;
+  color: #4D4F56;
   font-size: 1rem;
   font-weight: 100;
 }

@@ -5,8 +5,8 @@
   max-width: 912px;
   min-width: 375px;
   height: 8rem;
-  background-color: #042926;
-  border-bottom: 2px solid #07b3a4;
+  background-color: #202731;
+  border-bottom: 2px solid #00ACB4;
   overflow-Y: hidden;
   z-index: 1;
 }
@@ -23,18 +23,20 @@
   top: 0.5rem;
 }
 .header__title {
-  color: #FFFFFF;
+  color: #c9c9c9;
   text-align: center;
   margin: 0.5rem 0 2.5rem 0;
   font-size: 1.2rem;
-  background-color: #07b3a422;
+  background-color: rgba(77, 79, 86, 0.3);
   padding: 0.3rem 0;
+  font-family: "Coming Soon", cursive;
+  font-weight: 600;
 }
 .header__tasks {
   position: relative;
-  color: #FFFFFF;
-  background-color: #1c493f;
-  border: 1px solid #d1cdcd;
+  color: #c9c9c9;
+  background-color: rgba(77, 79, 86, 0.3);
+  border: 1px solid #787C85;
   padding: 0.3rem 1rem;
   margin: 0 2rem;
   height: 1.7rem;
@@ -46,9 +48,9 @@
   top: -1.4rem;
   left: calc(50% - 150px);
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 300;
   padding: 0rem;
-  color: #ffffff;
+  color: #c9c9c9;
 }
 .header__tasks--counter {
   position: absolute;

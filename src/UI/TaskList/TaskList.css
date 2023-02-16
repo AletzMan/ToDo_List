@@ -1,23 +1,24 @@
 .todoList {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(4rem, 1fr));
-    justify-content: center;
-    align-items: center;
-    width: 100%;    
-    height: calc(100vh - 12rem);
-    margin-top: 8rem;
-    overflow-y: scroll;
-    gap: 1rem;
-    padding: 2rem;
-    list-style: none;
-    background-color: #619e99; 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(4rem, 1fr));
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 12rem);
+  margin-top: 8rem;
+  overflow-y: scroll;
+  gap: 1rem;
+  padding: 2rem;
+  list-style: none;
+  background-color: #787C85;
 }
+
 section {
-    width: 100%;   
-    height: calc(100vh - 12rem); 
-    max-width: 912px;
-    min-width: 375px; 
-    border-left: 1px solid #17171766;
-    border-right: 1px solid #17171766;
+  width: 100%;
+  height: calc(100vh - 12rem);
+  max-width: 912px;
+  min-width: 375px;
+  border-left: 1px solid #17171766;
+  border-right: 1px solid #17171766;
 }

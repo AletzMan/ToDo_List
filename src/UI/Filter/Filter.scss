@@ -1,0 +1,102 @@
+$color__header: #202731;
+$color__section: #4D4F56;
+$color__title: #c9c9c9;
+$color__button: #00ACB4;
+$color__border: #787C85;
+
+
+.filters {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    background-color: #FFFF3600;
+    border-bottom: 2px solid $color__button;
+
+    &__button {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        bottom: -2.1rem;
+        border: 1px solid $color__title;
+        background-color: $color__header;
+        cursor: pointer;
+        z-index: 1;
+
+
+        &--true~.filters__panel {
+            transform: translateY(8rem);
+        }
+
+        &--true {
+            border: 1px solid rgba($color: $color__button, $alpha: 0.6);
+            color: $color__button;
+            box-shadow: 0 0 19px 1px rgba($color: $color__button, $alpha: 0.4);
+            & svg path {
+                fill: $color__button;
+                stroke: $color__button;
+            }
+        }
+
+        &:hover {
+            border: 1px solid rgba($color: $color__button, $alpha: 0.6);
+            color: $color__button;
+            box-shadow: 0 0 19px 1px rgba($color: $color__button, $alpha: 0.4);
+
+            & svg {
+                stroke: $color__button;
+
+                & path {
+                    fill: $color__button;
+                }
+            }
+        }
+    }
+
+    &__panel {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 2fr 1fr 2fr;
+        place-items: center center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8rem;
+        transition: transform 0.5s linear;
+        background-color: $color__section;
+        border-bottom: 2px solid $color__button;
+    }
+
+    &__title {
+        color: $color__title;
+        grid-column: 1 / span 4;
+        font-size: 1.3rem;        
+    }
+
+    &__label {
+        font-size: 0.8rem;
+        color: $color__title;
+    }
+
+    &__checkbox {
+        width: 1.5rem;
+        height: 1.5rem;
+        accent-color: $color__button;
+        border: 1px solid $color__title;
+        align-self: flex-start;
+
+    }
+
+    &__svg {
+        width: 1.5rem;
+        fill: none;
+        stroke: $color__title;
+
+        & path {
+            fill: $color__title;
+        }
+    }
+}
+

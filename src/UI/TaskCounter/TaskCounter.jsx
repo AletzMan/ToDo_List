@@ -1,6 +1,7 @@
 import React from "react";
 import './TaskCounter.css';
 import listIcon from '../../assets/list.svg'
+import { useTodos } from "../../components/App/useTodos";
 /*
 const estilos = {
     color: '#AABB33',
@@ -12,7 +13,9 @@ const estilos = {
 */
 
  
-function TaskCounter({totalTasks, completedTasks, loading }) {    
+function TaskCounter() {    
+
+    const {totalTasks, completedTasks, loading } = useTodos();
 
     let porcentageTasksCompleted = (100 / totalTasks) * completedTasks;
     if(totalTasks === 0) {

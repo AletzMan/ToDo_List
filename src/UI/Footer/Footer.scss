@@ -1,3 +1,9 @@
+$color__header: #202731;
+$color__section: #4D4F56;
+$color__title: #c9c9c9;
+$color__button: #00ACB4;
+$color__border: #787C85;
+
 .footer {
     position: fixed;
     display: flex;
@@ -8,8 +14,8 @@
     max-width: 912px;
     min-width: 375px; 
     height: 4rem;
-    background-color: #042926;
-    border-top: 2px solid #07b3a4; &__false {
+    background-color: $color__section;
+    border-top: 2px solid $color__button; &__false {
         opacity: 1;
     }
     &__true {

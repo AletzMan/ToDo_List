@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ToastProvider config={{
         position: "top-center",
-        duration: 3000
+        duration: 1500
     }} >
         <App />
     </ToastProvider>
