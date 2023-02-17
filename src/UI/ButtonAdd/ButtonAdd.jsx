@@ -1,10 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useTodos } from "../../components/App/useTodos";
 import "./ButtonAdd.css"
 
-function ButtonAdd() {
-    const { onLoadModal, loading } = useTodos();
+function ButtonAdd({loading}) {
+  
     
     return (
         <NavLink className="todoButton__button"

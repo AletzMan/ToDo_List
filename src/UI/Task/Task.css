@@ -135,8 +135,9 @@
   padding: 0.2rem 0.5rem;
 }
 .task__date--span {
-  font-size: 0.75rem;
-  font-weight: 100;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #000000;
 }
 
 @keyframes animationCheck {

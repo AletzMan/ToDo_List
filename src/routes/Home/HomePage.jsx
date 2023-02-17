@@ -22,24 +22,24 @@ function HomePage() {
         stateSearch,
         setStateSearch,
         saveTask,
-        synchronizeTasks, } = useTodos();
+        synchronizeTasks, dateToday, totalTasks, completedTasks, setStateFilter } = useTodos();
     return (
         <React.Fragment>
-            <TaskCounter />
+            <TaskCounter totalTasks={totalTasks} completedTasks={completedTasks} loading={loading}/>
             <TaskList>
                 {error && <p>Llamar a asitencia 333-142-2547</p>}
                 {loading && <><TaskListLoader style={{ width: window.outerWidth - 64, height: 1150, viewBox: `0 0 ${window.outerWidth - 64} ${1150}` }}></TaskListLoader> <p className="loading">Cargando, por favor espere</p></>}
-                {!loading && !taskSearch.lenght}
-                {!loading && taskSearch.map(({ id, text, completed, date }) => (
+                {!loading && taskSearch?.map(({ id, text, statusTask, date }) => (
                     <Task
                         key={id}
                         id={id}
                         text={text}
-                        completed={completed}
+                        statusTask={statusTask}
                         date={date}
-                        taskComplete={() => taskComplete(id)}
+                        taskComplete={taskComplete}
                         taskDelete={() => taskDelete(id)}
-                        saveTask={saveTask} />
+                        saveTask={saveTask} 
+                        dateToday={dateToday}/>
                 ))}
             </TaskList>
             <Footer loading={loading}>
@@ -47,9 +47,9 @@ function HomePage() {
                     stateSearch={stateSearch}
                     setStateSearch={setStateSearch}
                 />}
-                <ButtonAdd />
+                <ButtonAdd loading={loading} />
             </Footer>        
-            <Filter></Filter>   
+            <Filter setStateFilter={setStateFilter}  loading={loading}></Filter>   
 
             <ChangeAlert synchronize={synchronizeTasks}/>
         </React.Fragment >

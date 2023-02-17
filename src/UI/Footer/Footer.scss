@@ -12,14 +12,17 @@ $color__border: #787C85;
     bottom: 0rem;
     width: 100%;
     max-width: 912px;
-    min-width: 375px; 
+    min-width: 375px;
     height: 4rem;
     background-color: $color__section;
-    border-top: 2px solid $color__button; &__false {
+    border-top: 2px solid $color__button;
+    z-index: 2;
+
+    &__false {
         opacity: 1;
     }
+
     &__true {
         opacity: 0.5;
     }
 }
-   

@@ -1,24 +1,29 @@
 .filters {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: -4rem;
+  left: auto;
   width: 100%;
+  max-width: 912px;
+  min-width: 375px;
   height: 8rem;
   background-color: #FFFF3600;
-  border-bottom: 2px solid #00ACB4;
+  z-index: 1;
+}
+.filters__true {
+  opacity: 0;
 }
 .filters__button {
   position: absolute;
   width: 2rem;
   height: 2rem;
-  bottom: -2.1rem;
+  top: -2.1rem;
   border: 1px solid #c9c9c9;
   background-color: #202731;
   cursor: pointer;
   z-index: 1;
 }
 .filters__button--true ~ .filters__panel {
-  transform: translateY(8rem);
+  transform: translateY(-8rem);
 }
 .filters__button--true {
   border: 1px solid rgba(0, 172, 180, 0.6);
@@ -50,9 +55,9 @@
   left: 0;
   width: 100%;
   height: 8rem;
-  transition: transform 0.5s linear;
+  transition: transform 0.35s linear;
   background-color: #4D4F56;
-  border-bottom: 2px solid #00ACB4;
+  border-top: 2px solid #00ACB4;
 }
 .filters__title {
   color: #c9c9c9;

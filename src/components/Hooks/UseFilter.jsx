@@ -43,6 +43,22 @@ function useFilter() {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const sortFilterArray = (array, reverse) => {
+        if (!reverse) {
+            array.sort(function (a, b) {
+                if (a.date > b.date) return 1;
+                if (a.date < b.date) return -1;
+                return 0;
+            });
+        } else {
+            array.sort(function (b, a) {
+                if (a.date > b.date) return 1;
+                if (a.date < b.date) return -1;
+                return 0;
+            });
+        }
+        return array
+    }
 
     const updateState = (typeFilter, stateFilter) => {
         switch (typeFilter) {
@@ -65,7 +81,8 @@ function useFilter() {
 
     return ({
         state,
-        updateState
+        updateState,
+        sortFilterArray
     })
 }
 

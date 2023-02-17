@@ -10,28 +10,29 @@ import editTask from "../../assets/edit.svg";
 import { useNavigate } from "react-router-dom";
 import { useTodos } from "../../components/App/useTodos";
 
-function Task({ id, text, completed, date, taskComplete, taskDelete }) {
-    const { dateToday } = useTodos();
+function Task({ id, text, statusTask, date, taskComplete, taskDelete, dateToday }) {
     const navigate = useNavigate();
+
+    
 
     let imageDelete;
     let imageTask = noneTask;
     let tagDate = <p className="task__date">Fecha limite: <span className="task__date--span">{date}</span></p>;
     let inTime = date < dateToday? false : true;
-    let statusTask;
-    if(inTime && completed || !inTime && completed) {
-        statusTask = { text: "completed", icon: check };
-    } else if(inTime && !completed) {
-        statusTask = { text: "pending", icon: pending };
-    } else if(!inTime && !completed && text !== "No tienes tareas agregadas" && text !== "La busqueda no genero resultados") {
-        statusTask = { text: "overdue", icon: nocheck };
-    } else if(completed === undefined && text === "No tienes tareas agregadas") {
-        statusTask = { text: "noTask", icon: information }
-    } else if(text === "La busqueda no genero resultados") {
-        statusTask = { text: "noFound", icon: noneTask }
+    let statusTaskAndIcon;
+    if(statusTask === 'completed') {
+        statusTaskAndIcon = { text: "completed", icon: check };
+    } else if(statusTask === 'pending') {
+        statusTaskAndIcon = { text: "pending", icon: pending };
+    } else if(statusTask === 'overdue') {
+        statusTaskAndIcon = { text: "overdue", icon: nocheck };
+    } else if(statusTask === 'noTask') {
+        statusTaskAndIcon = { text: "noTask", icon: information }
+    } else if(statusTask === 'noFound') {
+        statusTaskAndIcon = { text: "noFound", icon: noneTask }
     }
     
-    if (completed !== undefined) {
+    if (statusTask !== 'noTask' && statusTask !== 'noFound') {
         imageDelete = (
             <>
                 <button className="task__delete" onClick={taskDelete}>
@@ -50,7 +51,7 @@ function Task({ id, text, completed, date, taskComplete, taskDelete }) {
             </>
         )
     } else {
-        if (text === "No tienes tareas agregadas") {
+        if (statusTask === "noTask") {
             imageTask = noneTask;
             tagDate = '';
         } else {
@@ -60,11 +61,11 @@ function Task({ id, text, completed, date, taskComplete, taskDelete }) {
     }
     return (
 
-        <li className={`task__item task__item--${statusTask.text}`}>
-            <img alt="icon check todo" src={statusTask.icon} className="task--check"
-                onClick={taskComplete}
+        <li className={`task__item task__item--${statusTaskAndIcon.text}`}>
+            <img alt="icon check todo" src={statusTaskAndIcon.icon} className="task--check"
+                onClick={() => taskComplete(id)}
             />
-            <p className={`task__name task__name--${statusTask.text}`} name={text}>{text}</p>
+            <p className={`task__name task__name--${statusTaskAndIcon.text}`} name={text}>{text}</p>
             {tagDate}
             {imageDelete}
         </li>

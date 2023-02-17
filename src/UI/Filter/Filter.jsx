@@ -1,15 +1,20 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useFilter } from "../../components/Hooks/UseFilter";
 import "./Filter.css"
 
-function Filter() {
+function Filter({ setStateFilter,  loading }) {
     const [activePanel, setActivePanel] = useState(false);
     const { state, updateState } = useFilter();
-    console.log(state)
+
+   
+    useEffect(() => {
+        setStateFilter(state);
+    },[state])
 
     return (
-        <div className="filters">
+        <div className={`filters filters__${loading}`}>
             <button className={`filters__button filters__button--${activePanel}`} onClick={() => setActivePanel(!activePanel)}>
                 <svg className="filters__svg" width="32" height="32" viewBox="0 0 32 32" >
                     <path d="M28,9H11a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
@@ -29,10 +34,10 @@ function Filter() {
                 <label htmlFor="pending" className="filters__label">Pendientes</label>
                 <label htmlFor="overdue " className="filters__label">Atrasadas</label>
                 <label htmlFor="fordate" className="filters__label">Fecha</label>
-                <input onChange={(e) => updateState(0, e.target.checked)} defaultChecked={ state.completed } name="filter" type="checkbox" className="filters__checkbox" />
-                <input onChange={(e) => updateState(1, e.target.checked)} defaultChecked={ state.pending } name="filter" type="checkbox" className="filters__checkbox" />
-                <input onChange={(e) => updateState(2, e.target.checked)} defaultChecked={ state.overdue } name="filter" id="overdue" type="checkbox" className="filters__checkbox" />
-                <input onChange={(e) => updateState(3, e.target.checked)} defaultChecked={ state.date } name="fordate" id="fordate" type="checkbox" className="filters__checkbox" />
+                <input onChange={(e) => updateState(0, e.target.checked)} defaultChecked={state.completed} name="filter" type="checkbox" className="filters__checkbox" />
+                <input onChange={(e) => updateState(1, e.target.checked)} defaultChecked={state.pending} name="filter" type="checkbox" className="filters__checkbox" />
+                <input onChange={(e) => updateState(2, e.target.checked)} defaultChecked={state.overdue} name="filter" id="overdue" type="checkbox" className="filters__checkbox" />
+                <input onChange={(e) => updateState(3, e.target.checked)} defaultChecked={state.date} name="fordate" id="fordate" type="checkbox" className="filters__checkbox" />
             </div>
         </div>
     )

@@ -13,10 +13,7 @@ const estilos = {
 */
 
  
-function TaskCounter() {    
-
-    const {totalTasks, completedTasks, loading } = useTodos();
-
+function TaskCounter({ totalTasks, completedTasks, loading }) { 
     let porcentageTasksCompleted = (100 / totalTasks) * completedTasks;
     if(totalTasks === 0) {
         porcentageTasksCompleted = 0;

@@ -39,7 +39,7 @@ function EditTaskPage() {
     }
 
     const saveEditTask = () => {
-        saveTask(id, messageEdit, dateEdit);
+        saveTask(id, messageEdit, task.statusTask, dateEdit);
         toast.success("Task saved successfully");
         navigate("/");
     }

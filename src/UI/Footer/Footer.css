@@ -10,6 +10,7 @@
   height: 4rem;
   background-color: #4D4F56;
   border-top: 2px solid #00ACB4;
+  z-index: 2;
 }
 .footer__false {
   opacity: 1;
