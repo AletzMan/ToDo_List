@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ToDo_List/static/css/main.4024af43.css",
+    "main.js": "/ToDo_List/static/js/main.3e889e3f.js",
+    "static/media/edit-icon.png": "/ToDo_List/static/media/edit-icon.78fd7c3f6a54255725b3.png",
+    "static/media/list.svg": "/ToDo_List/static/media/list.253a36234fd5a6527934546614de9ed9.svg",
+    "static/media/nonetask.svg": "/ToDo_List/static/media/nonetask.9d67016dff1ca32c63a5d799681abead.svg",
+    "static/media/information.svg": "/ToDo_List/static/media/information.2778f2472cb6354148b2a0aaa5a1c03e.svg",
+    "static/media/arrow_back.svg": "/ToDo_List/static/media/arrow_back.b2ba1522854b85cd1e1c1a5ab518d6ac.svg",
+    "index.html": "/ToDo_List/index.html",
+    "static/media/no-check.svg": "/ToDo_List/static/media/no-check.bcb9a0b12b9a2ae6e51c84ef33d64662.svg",
+    "static/media/search.svg": "/ToDo_List/static/media/search.37b2821149a691fb248401f77345c693.svg",
+    "static/media/check.svg": "/ToDo_List/static/media/check.9250372bf37c4acd3b4921ac9ca8a523.svg",
+    "static/media/pending.svg": "/ToDo_List/static/media/pending.a697535f9a145ed784db1e4388ea8d20.svg",
+    "main.4024af43.css.map": "/ToDo_List/static/css/main.4024af43.css.map",
+    "main.3e889e3f.js.map": "/ToDo_List/static/js/main.3e889e3f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4024af43.css",
+    "static/js/main.3e889e3f.js"
+  ]
+}
