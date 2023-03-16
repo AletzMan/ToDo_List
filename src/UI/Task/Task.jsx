@@ -1,14 +1,11 @@
 import React from "react";
 import "./Task.css";
-import deleteTaskIcon from "../../assets/delete.svg";
 import check from "../../assets/check.svg";
 import nocheck from "../../assets/no-check.svg";
 import information from "../../assets/information.svg";
 import noneTask from "../../assets/nonetask.svg";
 import pending from "../../assets/pending.svg";
-import editTask from "../../assets/edit.svg";
 import { useNavigate } from "react-router-dom";
-import { useTodos } from "../../components/App/useTodos";
 
 function Task({ id, text, statusTask, date, taskComplete, taskDelete, dateToday }) {
     const navigate = useNavigate();
@@ -34,7 +31,7 @@ function Task({ id, text, statusTask, date, taskComplete, taskDelete, dateToday 
     
     if (statusTask !== 'noTask' && statusTask !== 'noFound') {
         imageDelete = (
-            <>
+            <div className="task__buttons">
                 <button className="task__delete" onClick={taskDelete}>
                     <svg className="task__delete--img" x="0px" y="0px" viewBox="0 0 100 100">
                         <path d="M27.4,76.6c0,4.6,3.8,8.4,8.5,8.4h28.3c4.7,0,8.5-3.8,8.5-8.4l5.7-44.8H21.7L27.4,76.6z M58.5,40.2h5.7v36.4 h-5.7V40.2z M47.2,40.2h5.7v36.4h-5.7V40.2z M35.9,40.2h5.7v36.4h-5.7V40.2z M76.9,20.6H58.5c0,0-1.3-5.6-2.8-5.6H44.3 c-1.6,0-2.8,5.6-2.8,5.6H23.1c-2.3,0-4.2,1.9-4.2,4.2s0,4.2,0,4.2h62.2c0,0,0-1.9,0-4.2S79.2,20.6,76.9,20.6z"/>
@@ -48,7 +45,7 @@ function Task({ id, text, statusTask, date, taskComplete, taskDelete, dateToday 
                         <path d="M77,85.3H16.7c-1.5,0-2.6-1.2-2.6-2.7V18.1c0-1.5,1.2-2.7,2.6-2.7h40.5c1.5,0,2.6,1.2,2.6,2.7 c0,1.5-1.2,2.7-2.6,2.7H19.3V80H77c2.1,0,3.7-1.7,3.7-3.8V42.9c0-1.5,1.2-2.7,2.6-2.7c1.5,0,2.6,1.2,2.6,2.7v33.3 C86,81.2,82,85.3,77,85.3z" />
                     </svg>
                 </button>
-            </>
+            </div>
         )
     } else {
         if (statusTask === "noTask") {
@@ -60,8 +57,7 @@ function Task({ id, text, statusTask, date, taskComplete, taskDelete, dateToday 
         }
     }
     return (
-
-        <li className={`task__item task__item--${statusTaskAndIcon.text}`}>
+        <li className={`task task__item task__item--${statusTaskAndIcon.text}`}>
             <img alt="icon check todo" src={statusTaskAndIcon.icon} className="task--check"
                 onClick={() => taskComplete(id)}
             />
