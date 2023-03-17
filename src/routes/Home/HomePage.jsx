@@ -22,10 +22,14 @@ function HomePage() {
         stateSearch,
         setStateSearch,
         saveTask,
-        synchronizeTasks, dateToday, totalTasks, completedTasks, setStateFilter } = useTodos();
+        synchronizeTasks, 
+        dateToday, 
+        totalTasks, 
+        completedTasks, 
+        setStateFilter } = useTodos();
     return (
         <React.Fragment>
-            <TaskCounter totalTasks={totalTasks} completedTasks={completedTasks} loading={loading}/>
+            <TaskCounter totalTasks={totalTasks} completedTasks={completedTasks} loading={loading} />
             <TaskList>
                 {error && <p>Llamar a asitencia 333-142-2547</p>}
                 {loading && <><TaskListLoader style={{ width: window.outerWidth - 64, height: 1150, viewBox: `0 0 ${window.outerWidth - 64} ${1150}` }}></TaskListLoader> <p className="loading">Cargando, por favor espere</p></>}
@@ -38,8 +42,8 @@ function HomePage() {
                         date={date}
                         taskComplete={taskComplete}
                         taskDelete={() => taskDelete(id)}
-                        saveTask={saveTask} 
-                        dateToday={dateToday}/>
+                        saveTask={saveTask}
+                        dateToday={dateToday} />
                 ))}
             </TaskList>
             <Footer loading={loading}>
@@ -48,10 +52,9 @@ function HomePage() {
                     setStateSearch={setStateSearch}
                 />}
                 <ButtonAdd loading={loading} />
-            </Footer>        
-            <Filter setStateFilter={setStateFilter}  loading={loading}></Filter>   
-
-            <ChangeAlert synchronize={synchronizeTasks}/>
+            </Footer>
+            <Filter setStateFilter={setStateFilter} loading={loading} />
+            <ChangeAlert synchronize={synchronizeTasks} />
         </React.Fragment >
     );
 }

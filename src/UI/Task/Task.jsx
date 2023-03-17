@@ -28,7 +28,6 @@ function Task({ id, text, statusTask, date, taskComplete, taskDelete, dateToday 
     } else if(statusTask === 'noFound') {
         statusTaskAndIcon = { text: "noFound", icon: noneTask }
     }
-    
     if (statusTask !== 'noTask' && statusTask !== 'noFound') {
         imageDelete = (
             <div className="task__buttons">

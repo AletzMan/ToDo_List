@@ -15,16 +15,18 @@ function useTodos() {
 
 
 
-
     if (stateSearch.length === 0) {
         taskSearch = tasks;
         if (taskSearch.length === 0) {
+            console.log('AQUI NO TASKS')
             let taskEmpty = [{ id: 0, text: 'No tienes tareas agregadas', statusTask: 'noTask', date: '' }];
             taskSearch = taskEmpty;
+            console.log(taskSearch)
         }
     } else {
         taskSearch = tasks.filter(task => task.text.toLowerCase().includes(stateSearch.toLowerCase()));
 
+        console.log('AQUI ELSE')
 
         if (taskSearch.length === 0) {
             let taskEmpty = [{ id: 0, text: 'La busqueda no genero resultados', statusTask: 'noFound', date: '' }];
@@ -35,28 +37,36 @@ function useTodos() {
 
     // useEffect(() => {
     let resultFilter = [];
-    if (stateFilter.completed) {
+    if (stateFilter.completed && tasks.length > 0) {
+        console.log('AQUI COMPLETES')
         const filterCompleted = taskSearch.filter(task => task.statusTask === 'completed')
         filterCompleted.map(filter => resultFilter.push(filter));
     }
-    if (stateFilter.pending) {
+    if (stateFilter.pending && tasks.length > 0) {
+        console.log('AQUI PENDING')
         const filterPending = taskSearch.filter(task => task.statusTask === 'pending')
         filterPending.map(filter => resultFilter.push(filter));
     }
-    if (stateFilter.overdue) {
+    if (stateFilter.overdue && tasks.length > 0) {
+        console.log('AQUI OVERDUE')
         const filterOverdue = taskSearch.filter(task => task.statusTask === 'overdue')
         filterOverdue.map(filter => resultFilter.push(filter));
     }
 
     resultFilter = sortFilterArray(resultFilter, false);
     console.log(resultFilter)
-    if (stateFilter.date) {
-        resultFilter = sortFilterArray(resultFilter, false);
-    } else {
-        resultFilter = sortFilterArray(resultFilter, true);
+    if (tasks.length > 0) {
+        if (stateFilter.date) {
+            console.log('AQUI 1')
+            resultFilter = sortFilterArray(resultFilter, false);
+        } else {
+            console.log('AQUI 2')
+            resultFilter = sortFilterArray(resultFilter, true);
+        }
     }
 
-    if (!stateFilter.completed && !stateFilter.pending && !stateFilter.overdue) {
+    if (!stateFilter.completed && !stateFilter.pending && !stateFilter.overdue && tasks.length > 0) {
+        console.log('AQUI 3')
         if (stateFilter.date) {
             resultFilter = sortFilterArray(taskSearch, false);
         } else {
@@ -65,13 +75,14 @@ function useTodos() {
     }
 
 
-
-
-    if (resultFilter.length === 0) {
-        let taskEmpty = [{ id: 0, text: 'La busqueda no genero resultados', statusTask: 'noFound', date: '' }];
-        taskSearch = taskEmpty;
-    } else {
-        taskSearch = resultFilter;
+    if (tasks.length !== 0) {
+        if (resultFilter.length === 0) {
+            console.log('AQUI 4')
+            let taskEmpty = [{ id: 0, text: 'La busqueda no genero resultados', statusTask: 'noFound', date: '' }];
+            taskSearch = taskEmpty;
+        } else {
+            taskSearch = resultFilter;
+        }
     }
 
     const addTask = (message, date) => {
@@ -131,7 +142,7 @@ function useTodos() {
         })
         saveTasks(newtasks);
     };
-
+    console.log(taskSearch)
     return ({
         loading,
         error,
